@@ -7,6 +7,11 @@ export default function Header() {
           comunity.
         </h1>
       </div>
+      <div className="pt-4">
+        <a href="/#" className="bg-gray-900 text-white py-3 px-5 rounded-md">
+          Build your community
+        </a>
+      </div>
     </header>
   );
 }
