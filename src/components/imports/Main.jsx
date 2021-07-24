@@ -42,19 +42,27 @@ const cards = [
   {
     posted: "14 mins ago",
     url_profile:
-      "https://firebasestorage.googleapis.com/v0/b/faststartup.appspot.com/o/images.jpg?alt=media&token=2123c007-5bf9-465e-8b3f-1d2928f1fdf0",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png",
+    url_picture:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png",
     text: "It's time for summer refresh, mamma!",
     time_left: "2 Days left",
   },
   {
     posted: "15 mins ago",
-    url_profile: "url",
+    url_profile:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png",
+    url_picture:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png",
     text: "It's time for summer refresh, mamma!",
     time_left: "6 Days left",
   },
   {
     posted: "16 mins ago",
-    url_profile: "url",
+    url_profile:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png",
+    url_picture:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png",
     text: "It's time for summer refresh, mamma!",
     time_left: "6 Days left",
   },
@@ -67,7 +75,7 @@ function classNames(...classes) {
 export default function Main() {
   return (
     <main className=" h-screen bg-gradient-to-b from-blue-100 via-green-200  to-gray-200 flex items-center justify-center pt-16">
-      <div className="h-full w-3/4 bg-white rounded-xl align-top shadow-lg">
+      <div className="h-screen w-3/4 bg-white rounded-xl align-top shadow-lg">
         <div className="bg-gray-200 h-8 w-full rounded-t-xl flex align-middle justify-start items-center">
           <div className="bg-red-500 w-3 h-3 rounded-full ml-4"></div>
           <div className="bg-yellow-500 w-3 h-3 rounded-full ml-2"></div>
@@ -126,7 +134,7 @@ export default function Main() {
           </div>
         </div>
         <div className="bg-gray-100 px-16 justify-items-start mx-2 h-4/6 rounded-b-lg">
-          <div className="w-full h-1/6">
+          <div className="w-full h-16">
             <div className="flex items-center">
               <div className="flex justify-start w-3/4 space-x-4">
                 <Menu as="div" className="relative inline-block text-center">
@@ -325,7 +333,7 @@ export default function Main() {
           <div className=" w-full h-full flex align-middle justify-between space-x-7">
             {cards.map((item) => (
               <Fragment key={item.posted}>
-                <div className="w-2/6 h-4/5 bg-white rounded-xl">
+                <div className="w-2/6 h-5/6 bg-white rounded-xl">
                   <div className="w-full h-1/5 flex items-center justify-items-start pl-5">
                     <img
                       className="h-8 w-8 rounded-full"
@@ -361,14 +369,36 @@ export default function Main() {
                   <div className="w-full flex align-middle justify-center">
                     <img
                       className="rounded-lg bg-contain h-44 w-64"
-                      src={item.url_profile}
+                      src={item.url_picture}
                       alt=""
                     />
                   </div>
                   <div className="w-full text-left pl-6 pt-3">
-                    <p className="text-gray-900 font-bold text-md  w-3/5">
+                    <p className="text-gray-900 font-bold text-md w-3/5">
                       {item.text}
                     </p>
+                  </div>
+                  <div className="w-full flex align-middle justify-between px-6 pt-1">
+                    <img
+                      className="h-6 w-6 rounded-full"
+                      src={item.url_profile}
+                      alt=""
+                    />
+                    <div className="flex space-x-1 bg-yellow-200 rounded-xl px-2">
+                      <Icon
+                        className="h-6 w-4"
+                        path={mdiClockTimeThreeOutline}
+                      />
+                      <p>{item.time_left}</p>
+                    </div>
+                  </div>
+                  <div className="w-full flex align-middle justify-center mt-4 text-white">
+                    <button
+                      href="/#"
+                      className=" w-5/6 h-10 bg-red-900 rounded-2xl"
+                    >
+                      Read more &amp; Join
+                    </button>
                   </div>
                 </div>
               </Fragment>
